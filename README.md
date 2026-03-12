@@ -40,4 +40,4 @@ Acompanhe a evolução do projeto passo a passo:
 
 1. Clone o repositório:
    ```bash
-   git clone [https://github.com/SEU_USUARIO/sistema-usuarios-api.git](https://github.com/SEU_USUARIO/sistema-usuarios-api.git)
+   git clone [https://github.com/g-albuquerque-dev/sistema-usuarios-api.git](https://github.com/g-albuquerque-dev/sistema-usuarios-api.git)
