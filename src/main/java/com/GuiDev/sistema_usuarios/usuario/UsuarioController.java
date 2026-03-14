@@ -22,4 +22,14 @@ public class UsuarioController {
     public Usuario salvar(@RequestBody Usuario usuario){
         return service.salvar(usuario);
     }
+
+    @PutMapping("/{id}")
+    public Usuario atualizar(@PathVariable Long id, @RequestBody Usuario usuario){
+        return service.atualizar(id, usuario);
+    }
+
+    @DeleteMapping("/{id}")
+    public void excluir(@PathVariable Long id){
+        service.excluir(id);
+    }
 }
