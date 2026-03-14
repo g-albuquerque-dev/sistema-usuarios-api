@@ -28,8 +28,8 @@ O objetivo principal desta aplicação é construir um CRUD (Create, Read, Updat
 Acompanhe a evolução do projeto passo a passo:
 
 - [x] **Fase 1:** Setup inicial do projeto (Spring Boot, dependências e repositório Git).
-- [ ] **Fase 2:** Modelagem do banco de dados e criação da Entidade `Usuario`.
-- [ ] **Fase 3:** Construção da API REST (Endpoints GET, POST, PUT, DELETE).
+- [x] **Fase 2:** Modelagem do banco de dados e criação da Entidade `Usuario`.
+- [x] **Fase 3:** Construção da API REST completa (CRUD) e consultas customizadas por E-mail.
 - [ ] **Fase 4:** Desenvolvimento do Front-end em Angular e integração com a API.
 - [ ] **Fase 5:** Implementação de segurança com senhas criptografadas (BCrypt/Spring Security).
 - [ ] **Fase 6:** *[Bônus]* Containerização da aplicação utilizando Docker.
