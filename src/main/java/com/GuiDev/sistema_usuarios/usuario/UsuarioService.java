@@ -14,9 +14,13 @@ public class UsuarioService {
     public List<Usuario> listarTodos(){
         return repository.findAll(); // O JPA faz o SELECT * FROM tb_usuarios sozinho!
     }
+    public Usuario buscarPorEmail(String email) {
+        return repository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("Email não encontrado!"));
+    }
 
     public Usuario salvar(Usuario usuario) {
-        return repository.save(usuario);
+        return repository.saveAndFlush(usuario);
     }
 
     public void excluir(Long id){
@@ -31,5 +35,10 @@ public class UsuarioService {
         usuarioExistente.setSenha(usuarioAtualizado.getSenha());
 
         return repository.save(usuarioExistente);
+    }
+
+    public void excluirPorEmail(String email){
+        Usuario usuarioParaDeletar = buscarPorEmail(email);
+        repository.delete(usuarioParaDeletar);
     }
 }

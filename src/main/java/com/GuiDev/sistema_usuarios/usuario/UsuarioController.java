@@ -13,14 +13,20 @@ public class UsuarioController {
     @Autowired
     private UsuarioService service;
 
+
     @GetMapping
-    public List<Usuario> listarTodos(){
+    public List<Usuario> listarTodos() {
         return service.listarTodos();
     }
 
     @PostMapping
     public Usuario salvar(@RequestBody Usuario usuario){
         return service.salvar(usuario);
+    }
+
+    @GetMapping("/email/{email}")
+    public Usuario buscarPorEmail(@PathVariable String email){
+        return service.buscarPorEmail(email);
     }
 
     @PutMapping("/{id}")
@@ -31,5 +37,10 @@ public class UsuarioController {
     @DeleteMapping("/{id}")
     public void excluir(@PathVariable Long id){
         service.excluir(id);
+    }
+
+    @DeleteMapping("/email/{email}")
+    public void excluirPorEmail(@PathVariable String email){
+        service.excluirPorEmail(email);
     }
 }
