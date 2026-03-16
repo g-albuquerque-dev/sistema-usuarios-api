@@ -1,6 +1,8 @@
 package com.GuiDev.sistema_usuarios.usuario;
 
 
+import com.GuiDev.sistema_usuarios.usuario.dto.UsuarioRequestDTO;
+import com.GuiDev.sistema_usuarios.usuario.dto.UsuarioResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,23 +17,23 @@ public class UsuarioController {
 
 
     @GetMapping
-    public List<Usuario> listarTodos() {
+    public List<UsuarioResponseDTO> listarTodos() {
         return service.listarTodos();
     }
 
     @PostMapping
-    public Usuario salvar(@RequestBody Usuario usuario){
-        return service.salvar(usuario);
+    public UsuarioResponseDTO salvar(@RequestBody UsuarioRequestDTO dto){
+        return service.salvar(dto);
     }
 
-    @GetMapping("/email/{email}")
-    public Usuario buscarPorEmail(@PathVariable String email){
-        return service.buscarPorEmail(email);
+    @GetMapping("/{id}")
+    public UsuarioResponseDTO buscarPorId(@PathVariable Long id){
+        return service.buscarPorId(id);
     }
 
     @PutMapping("/{id}")
-    public Usuario atualizar(@PathVariable Long id, @RequestBody Usuario usuario){
-        return service.atualizar(id, usuario);
+    public UsuarioResponseDTO atualizar(@PathVariable Long id, @RequestBody UsuarioRequestDTO dto){
+        return service.atualizar(id, dto);
     }
 
     @DeleteMapping("/{id}")
@@ -39,8 +41,4 @@ public class UsuarioController {
         service.excluir(id);
     }
 
-    @DeleteMapping("/email/{email}")
-    public void excluirPorEmail(@PathVariable String email){
-        service.excluirPorEmail(email);
-    }
 }

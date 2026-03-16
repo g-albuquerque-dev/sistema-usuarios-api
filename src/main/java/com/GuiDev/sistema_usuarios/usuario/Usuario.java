@@ -3,6 +3,7 @@ package com.GuiDev.sistema_usuarios.usuario;
 import jakarta.persistence.*;
 import lombok.*;
 
+@Builder
 @Entity
 @Table(name = "tb_usuarios")
 @Getter
@@ -24,4 +25,6 @@ public class Usuario {
 
     @Column(nullable = false)
     private String senha;
+
+
 }
